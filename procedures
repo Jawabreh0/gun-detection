@@ -1,0 +1,59 @@
+@uthor Ahmad Jawabreh
+
+
+1-) Create Python Virtual Environment 
+python3 -m venv yourEnvironmentName (OS terminal)
+
+2-) Activate the environment 
+.  yourEnvironmentName/bin/activate (OS terminal)
+
+3-) Create a simple image download script 
+pip install simple_image_download 
+or
+pip install simple-image-download 
+# script attached  named getSamples .py
+
+4-) run the script to download the samples 
+python3 getSamples (run the file in the OS terminal )
+
+5-) You will get many duplicated samples or samples not related to the keywords, so you need to filter the samples manually or create your own script to that. (i used the manual way to find best 60 sample of 300*2 = 600 samples)
+
+6-) install label image library
+pip install labelImg (OS terminal)
+
+7-) run label image program 
+labelImg (OS Terminal)
+
+8-) from the sideBar open the samples (data) directory using label image program 
+
+9-) from the side bar chose Create RecBox and start to select the faces 
+# if you got a problem to work with the library, you need to downgrade the python version to python3.9 
+# if you still have error check the issue below
+https://github.com/heartexlabs/labelImg/issues/811
+
+10-) after selecting the face, name the class and be careful to make the save format as YOLO from the sideBar and save the annotation in a file
+
+11-) do same process for all the sample 
+
+12-) in the data file you'll have two files: training/validation
+in the training file the are two files: samples/labels
+which consist all of the samples with it's label files
+in the validation file the are two files: samples/labels
+which consist 12 samples of the main samples with it's label files
+
+13-) algorithm run by default on the CPU, you can use PyTorch tool to run on the GPU
+
+14-) Install the requirements 
+pip install -r requirements.txt (Linux)
+pip install requirements.txt (windows)
+
+15-) go to data file, make a copy of the coco.yaml file, change the name to custome-data and change the train and val values to your files path, change the nc  (in the case 1 class), change the names to you class name (in this case 'jack sparrow')
+
+
+16-) go to the cfg file which contains the neural network architecture,  then to training file, make a copy of the yolo7.yaml and name the new file to yolo7-custom, open the file edit the nc to the classes number you have (in this case 1 class)
+
+17-) Training Yolov7 on custom dataset
+python train.py --workets 1 --device 0 --batch-size 8 --epochs 100 --img 640 640 --data custom_data.yaml --hyp data/hyp.scratch.custom.yaml --cfg cfg/yolov7-custom.yaml --name yolov7-custom --weights yolov7.pt
+
+
+18-) Testing on inages and videos

@@ -1,0 +1,20 @@
+@uthor Ahmad Jawabreh
+
+YOLO Algorithm
+
+- YOLO stand for You Only Look Once
+- YOLO is an effective real-time object recognition algorithm
+-  Cars such as Teslas use the YOLO algorithm and CNNs
+- ----------------------------------------------------
+- Most of the computer vision projects needs a detection algorithms
+-  YOLO is the best and fastest detection algorithm (1fps in real life detection)
+- Check the stages detector screenshoot 
+- Classification: knowing what is the object
+- Localization: knowing where is the object 
+- classification and localization: knowing where is the object and what is it 
+-  Object Detection: classification of different objects
+- Instance Segmentation: Classification and Localization of different objects 
+- Intersection over union (IoU) : It is used to evaluate the similarity between two sets of bounding boxes
+- intersection over union calculation: attached
+- Correct if IoU >= 0.5 
+
