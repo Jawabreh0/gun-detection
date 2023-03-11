@@ -74,4 +74,4 @@ The dataset used to train the gun detection algorithm is not publicly available 
 This implementation of the gun detection algorithm using YOLOv7 is based on the work of WongKinYiu, available at https://github.com/WongKinYiu/yolov7. The pre-trained weights used in this implementation are also from the same repository.
 
 ## License
-This project is licensed under the MIT License
+This project is licensed under the MIT License.
